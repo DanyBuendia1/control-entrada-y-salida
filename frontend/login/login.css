@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(134, 140, 252);
+}
+.padre{
+    margin-top: 150px;
+}
+.login{
+    border: solid;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    background-color: white;
+}
+h2{
+    margin-bottom: 25px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+input{
+    text-align: center;
+    width: 70%;
+    height: 40px;
+}
+input::placeholder{
+    font-size: 20px;
+}
+#entrar{
+    width: 180px;
+}

@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(134, 140, 252);   
+}
+
+.padre{
+    margin-top: 150px;
+}
+.registro{
+    border: solid;
+    padding: 30px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: white;
+    box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+}
+input{
+    text-align: center;
+}
+#registrar{
+    width: 190px;
+}
