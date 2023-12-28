@@ -1,9 +1,8 @@
-const { query } = require('express');
 const database = require('../config/database');
 const mysql2 = require('mysql2');
 
 const createemployee = (req,res)=>{
-    const [nombre, apellido, contraseña] = req.body;
+    const {nombre, apellido, contraseña} = req.body;
     
     const empleado = `insert into empleados(nombre, apellido, contraseña)values(?,?,aes_encrypt(?,'AES'));`;
     
@@ -62,17 +61,23 @@ const deleteemployee = (req, res)=>{
     });
 };
 
-const login = (req,res)=>{
-    const [nombre, contraseña] = req.body;
+const valueemployee =(req, res)=>{
+    const {nombre, apellido} = req.params;
 
-    const igualar = `select *from empleados where nombre=? and aes_decrypt(contraseña,'AES')=?;`;
+    const select = 'select nombre, apellido from empleados where nombre = ? and apellido =?;';
 
-    const query = mysql2.format(igualar, [nombre,contraseña]);
+    const query = mysql2.format(select, [nombre, apellido]);
 
-    database.query(query,(err,result)=>{
+    database.query(query, (err, result)=>{
         if(err) throw err;
-        console.log(result);
-        res.json('validacion exitosa');
+        if(result[0] != undefined)
+        {
+            res.json(result[0]);
+        }
+        else
+        {
+            res.json({message: 'Los datos no son validos'})
+        }
     })
 }
 
@@ -80,5 +85,6 @@ module.exports = {
     createemployee,
     reademployee,
     updateempoyee,
-    deleteemployee
+    deleteemployee,
+    valueemployee
 }

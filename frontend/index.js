@@ -9,7 +9,7 @@ document.getElementById('buscar').addEventListener("click", async(e)=>{
     }
     else
     {
-        await fetch(`http://localhost:5000/employees/${busqueda}`).then((response)=>response.json()).then((data)=>{
+        await fetch(`http://192.168.1.69:5000/employees/${busqueda}`).then((response)=>response.json()).then((data)=>{
             if(data.message)
             {
                 message = data.message;
@@ -19,6 +19,6 @@ document.getElementById('buscar').addEventListener("click", async(e)=>{
                 message = `nombre: ${data.nombre} | apellido: ${data.apellido} | contraseña: ${data.contrasena}`;
             }
         });
-        document.getElementById('infobuscar').innerHTML= message;
+        document.getElementById('infobuscar').innerHTML = message;
     }
 });

@@ -1,0 +1,52 @@
+.padre{
+    margin-top: 80px;
+}
+.search{
+    margin: 0 auto;
+    border: solid;
+    padding: 50px;
+}
+.table{
+    margin: 0 auto;
+    width: 100%;
+}
+.tabla{
+    margin: 0 auto;
+}
+
+
+.Registro{
+    border: solid;
+    text-align: center;
+    padding: 30px;
+    box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 10px 0px 0px rgba(0,0,0,0.75);
+    background-color: white;
+}
+.cerrar{
+    border: solid;
+    margin-left: 90%;
+    background-color: red;
+    font-size: 25px;
+}
+dialog{
+    text-align: center;
+    margin-top: 100px;
+}
+
+input{
+    text-align: center;
+}
+#btnregistrar:hover{
+    cursor: pointer;
+}
+.btnregistrar{
+    width: 190px;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#logout{
+    width: 100%;
+}
