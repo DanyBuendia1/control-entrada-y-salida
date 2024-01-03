@@ -14,7 +14,6 @@ app.use(cors());
 app.use('/employees', empleadoroutes);
 app.use('/login', login);
 app.use('/products', seeproducts);
-
 // ==================== MIDDLEWARES =================
 
 module.exports = app;

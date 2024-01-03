@@ -5,15 +5,13 @@
     margin: 0 auto;
     border: solid;
     padding: 50px;
+    text-align: center;
 }
-.table{
+
+.tabla{
     margin: 0 auto;
     width: 100%;
 }
-.tabla{
-    margin: 0 auto;
-}
-
 
 .Registro{
     border: solid;
@@ -49,4 +47,19 @@ h2{
 }
 #logout{
     width: 100%;
+}
+.cerrarupdate{
+    border: solid;
+    margin-left: 90%;
+    background-color: red;
+    font-size: 25px;
+}
+#idupdate{
+    width: 50px;
+}
+.cerrarventa{
+    border: solid;
+    margin-left: 90%;
+    background-color: red;
+    font-size: 25px;
 }

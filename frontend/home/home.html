@@ -12,7 +12,7 @@
   <body>  
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Inventario de Productos</a>
+        <h2 class="navbar-brand">Inventario de Productos</h2>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -36,44 +36,92 @@
       <div class="search col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
         <h2 class="text-center">Busqueda de Productos</h2><br>
         <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Nombre" id="nombreProduct" aria-label="Search">
-          <button class="btn btn-outline-success" type="button" id="searchProduc">Buscar</button>
+          <input class="form-control me-2" type="search" placeholder="Descripcion" id="nombreProduct" oninput="buscar()" aria-label="Search">
         </form>
+        <br>
+        <button type="button" class="btn btn-success mostrar">Mostrar Productos</button>
       </div>
     </div>
 
-    <div class="tabla col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Marca</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Total</th>
-          </tr>
-        </thead>
-        <tbody id="informacion"></tbody>
-      </table>
+    <br><br>
 
+    <div class="tabla col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+      <div class="table-responsive ">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Costo</th>
+              <th scope="col">Total</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="informacion"></tbody>
+        </table>
+      </div>
+    </div>
       <dialog class="Registro col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
         <button class="btn-close cerrar"></button>
         <h2>Registro de productos</h2><br>
         
-        <input type="text" placeholder="Nombre del Productos" id="nombreproducto"><br><br>
+        <input type="text" placeholder="Descripcion" id="descripcion"><br><br>
 
-        <input type="text" placeholder="Marca" id="nombremarca"><br><br>
+        <input type="number" placeholder="Cantidad" id="cantidad" oninput="totalinsert()"><br><br>
 
-        <input type="number" placeholder="Precio" id="precio"><br><br>
-
-        <input type="number" placeholder="Cantidad" id="cantidad"><br><br>
-
-        <h2>Total: <p id="total"></p></h2><br><br>
+        <input type="number" placeholder="Costo" id="costo" oninput="totalinsert()"><br><br>
         
+        <h2>Total: <p id="totalinsert"></p></h2>
         <button type="button" class="btn btn-outline-primary btnregistrar">Registrar</button>
       </dialog>
-    </div>
+    
+      <dialog class="verupdate col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+        <button class="btn-close cerrarupdate"></button>
+        <h2>Actualizar Productos</h2><br>
+        
+        <input type="number" disabled id="idupdate" value="0"><br><br>
+
+        <input type="text" placeholder="Nombre del Productos" id="nombreupdate"><br><br>
+
+        <input type="number" placeholder="Marca" id="marcaupdate" oninput="totalupdate()"><br><br>
+
+        <input type="number" placeholder="Precio" id="precioupdate" oninput="totalupdate()"><br><br>
+
+        <h2>Total: <p id="totalupdate"></p></h2><br><br>
+        
+        <button type="button" class="btn btn-outline-primary btnupdate">Actualizar</button>
+      </dialog>
+
+      <dialog class="mostrarventas table-responsive col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+        <button class="btn-close cerrarventa"></button>
+        <h2>vender producto</h2><br>
+        <h5 id="descripcionventa">Descripción</h5>
+        <table class="table table-responsive col-xs-12 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">Cantidad disponible</th>
+              <th scope="col">Cantidad deseada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" id="idventa">1</th>
+              <td id="cantidadventa">Mark</td>
+              <td><input type="number" id="cantidadcliente" placeholder="ingresa la cantidad"></td>
+            </tr>
+            <tr>
+              <th scope="row">Precio unitario</th>
+              <td id="costoventa">Jacob</td>
+              <td id="totalventa">precio total: $</td>
+            </tr>
+            <tr>
+            </tr>
+          </tbody>
+        </table>
+        <button type="button" class="btn btn-outline-primary btnvender">Vender</button>
+      </dialog>
     
     <script src="home.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

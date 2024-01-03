@@ -1,5 +1,19 @@
 let contador=0;
 
+let ver = document.getElementById('ver').addEventListener('click', ()=>{
+    let contraseña = document.getElementById('contraseña');
+
+    if(contraseña.type == 'password')
+    {
+        contraseña.type = 'text';
+    }
+    else
+    {
+        contraseña.type = 'password'
+    }
+})
+
+// ========= FUNCION DE ENTRAR ================
 document.getElementById('entrar').addEventListener('click',async (e)=>{
     e.preventDefault();
 
@@ -94,7 +108,6 @@ document.getElementById('registrar').addEventListener('click', async (e)=>{
             else
             {
                 alert('Los datos no son validos')
-           
             }
         })
     }
@@ -119,5 +132,4 @@ async function registrar(){
                 });
                 dialog.close()
                 swal(`${message}, ahora puedes iniciar sesion`,'','success');
-
 }
