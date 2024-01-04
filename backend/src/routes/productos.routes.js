@@ -1,6 +1,6 @@
 const {Router} = require('express');
 
-const {readproducs, searchproduct, registerProducts, deleteProduct, updateproducts} = require('../controllers/productos.controller');
+const {readproducs, searchproduct, registerProducts, deleteProduct, updateproducts, buscaventa} = require('../controllers/productos.controller');
 
 const seeproducts = Router();
 
@@ -13,5 +13,7 @@ seeproducts.post('/',registerProducts);
 seeproducts.delete('/:id',deleteProduct);
 
 seeproducts.put('/:id', updateproducts);
+
+seeproducts.get('/id:',buscaventa)
 
 module.exports = seeproducts;

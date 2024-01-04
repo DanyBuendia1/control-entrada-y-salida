@@ -28,7 +28,7 @@ const searchproduct = (req,res)=>{
     database.query(query,(err,result)=>{
         if(err)
         {
-            res.status(500).json({error:'Error al obtener lod datos'})
+            res.status(500).json({error:'Error al obtener los datos'})
         }
         res.json(result);
     });
@@ -72,4 +72,21 @@ const updateproducts = (req,res)=>{
     })
 }
 
-module.exports ={readproducs, searchproduct, registerProducts,deleteProduct, updateproducts};
+//================ Busca productos para venta ===========
+
+const buscaventa = (req, res) =>{
+    const{id_Eproducto} = req.params;
+
+    const search = 'select * from entrada_productos where id_Eproducto =?;';
+    const query = mysql2.format(search,[id_Eproducto])
+
+        database.query(query,(err,result)=>{
+            if(err)
+            {
+                res.status(500).json({error: 'Error al obtener los datos'})
+            }
+            res.json(result)
+        })
+}
+
+module.exports ={readproducs, searchproduct, registerProducts,deleteProduct, updateproducts,buscaventa};
